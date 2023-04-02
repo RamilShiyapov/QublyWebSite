@@ -1,0 +1,115 @@
+.Footer {
+  background-color: rgb(251, 252, 255);
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 3rem 2rem 1rem;
+}
+
+.FooterContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.FooterContent > .NavigationRow {
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.FooterLink {
+  color: var(--Violet);
+  font: normal 500 0.875rem "MetropolisMedium";
+}
+
+.FooterLink:hover {
+  opacity: 0.7;
+}
+
+.FooterLink:active {
+  opacity: 0.5;
+}
+
+.FooterContent
+  > .NavigationRow
+  > .ListColumn
+  > .ListColumnItem:first-child:has(.SmallTitle) {
+  margin: 0rem 0rem 1rem 0rem;
+}
+
+.FooterInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.FooterInfoText {
+  color: var(--Violet);
+  max-width: 13.6rem;
+  font: normal 500 0.75rem/1.25rem "MetropolisMedium";
+}
+
+.NewsLetter {
+  min-width: 11.25rem;
+  height: 4.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.NewsLetterForm {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0rem 0.5rem;
+  filter: drop-shadow(0rem 0.3rem 0.6rem rgb(0 0 0 / 5%));
+}
+
+.NewsLetterForm > input[type="email"] {
+  background-color: white;
+  width: 100%;
+  height: 2.5rem;
+  color: var(--Grey);
+  border: unset;
+  padding: 0rem 0.5rem;
+  font: normal 500 0.75rem "MetropolisMedium";
+}
+
+.Copyright {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.CopyrightText {
+  color: var(--Violet);
+  font: normal bold 1rem "MetropolisBold";
+}
+
+.Copyright > picture > img[src="images/Main/CopyrightIcon.webp"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .FooterContent {
+    gap: 2rem;
+    flex-direction: column-reverse;
+  }
+
+  .FooterContent > .NavigationRow {
+    flex-direction: column;
+  }
+
+  .Copyright {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,77 @@
+@media (max-width: 992px) {
+  .BigTitle {
+    text-align: center;
+  }
+
+  .Banner {
+    flex-direction: column;
+  }
+
+  .Banner::after {
+    display: none;
+  }
+
+  .BenefitFooter {
+    flex-direction: column;
+  }
+
+  .Info::before {
+    display: none;
+  }
+
+  .Teams::after {
+    display: none;
+  }
+
+  .FeedbackContent {
+    flex-direction: column;
+  }
+
+  .FeedbackContent > .Column {
+    align-items: center;
+  }
+
+  .Response > .Column > q {
+    max-width: 43rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .Partners {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .BannerInfo {
+    align-items: center !important;
+  }
+
+  .BannerInfo > .Text {
+    text-align: center;
+  }
+
+  .Info > .Column > .Inner {
+    align-items: center;
+  }
+
+  .Info > .Column > .Text {
+    text-align: center;
+  }
+
+  .Teams > .Column > .Inner {
+    align-items: center;
+  }
+
+  .Teams > .Column > .Text {
+    text-align: center;
+  }
+
+  .FeedbackForm {
+    min-width: 100% !important;
+  }
+}
+
+@media (max-width: 320px) {
+}

@@ -1,0 +1,575 @@
+@import url("Common.css");
+@import url("Adaptive.css");
+@import url("../components/Header/Header.css");
+@import url("../components/Footer/Footer.css");
+
+@font-face {
+  font-family: "MetropolisMedium";
+  src: url("../fonts/MetropolisMedium.woff2");
+}
+
+@font-face {
+  font-family: "MetropolisBold";
+  src: url("../fonts/MetropolisBold.woff2");
+}
+
+:root {
+  --HeaderHeight: 3.5rem;
+  --Purple: rgb(114, 46, 209);
+  --Violet: rgb(22, 6, 55);
+  --LightPurple: rgb(249, 240, 255);
+  --Grey: rgb(137, 137, 162);
+  --Pink: rgb(222, 201, 250);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.Logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.NavigationRow {
+  display: flex;
+  align-items: center;
+}
+
+.NavigationColumn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ListRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.ListRowItem {
+  display: flex;
+}
+
+.ListColumn {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.ListColumnItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.DropDown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.DropDownHeader {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.DropDownHeader:hover {
+  opacity: 0.8;
+}
+
+.DropDownHeader:active {
+  opacity: 0.5;
+}
+
+.DropDownHeader span {
+  color: black;
+  font: normal 500 1rem "MetropolisMedium";
+}
+
+.DropDownArrow {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-left: 0.1rem solid var(--Violet);
+  border-bottom: 0.1rem solid var(--Violet);
+  transform: rotate(134deg) translateY(-0.125rem);
+}
+
+.DropDown[open] .DropDownArrow {
+  transform: rotate(-45deg) translateY(-0.125rem);
+}
+
+.DropDownContent {
+  background-color: whitesmoke;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 2rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.MainButton {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.6rem;
+}
+
+.MainButtonText {
+  font: normal 500 1rem "MetropolisMedium";
+}
+
+.MainButton.WhiteButton {
+  background-color: white;
+  border: 0.1rem solid var(--Purple);
+}
+
+.MainButton.WhiteButton:hover {
+  background-color: var(--Purple);
+}
+
+.MainButton.WhiteButton:active {
+  opacity: 0.5;
+}
+
+.MainButton.WhiteButton .MainButtonText {
+  color: var(--Purple);
+}
+
+.MainButton.WhiteButton:hover .MainButtonText {
+  color: white;
+  text-decoration: unset;
+}
+
+.MainButton.PurpleButton {
+  background-color: var(--Purple);
+}
+
+.MainButton.PurpleButton:hover {
+  background-color: rgb(114 46 209 / 70%);
+}
+
+.MainButton.PurpleButton:active {
+  opacity: 0.5;
+}
+
+.MainButton.PurpleButton .MainButtonText {
+  color: white;
+}
+
+.MainButton.LightButton {
+  background-color: var(--LightPurple);
+}
+
+.MainButton.LightButton:hover {
+  background-color: rgb(249 240 255 / 70%);
+}
+
+.MainButton.LightButton:active {
+  opacity: 0.5;
+}
+
+.MainButton.LightButton .MainButtonText {
+  color: var(--Purple);
+}
+
+main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 6rem;
+  flex-direction: column;
+}
+
+.Banner {
+  background: linear-gradient(180deg, white 0%, rgb(226, 241, 255) 100%);
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Banner::after {
+  content: "";
+  background-image: url("../images/Home/Banner/MainBanner.webp");
+  background-size: cover;
+  min-width: 29.5rem;
+  min-height: 23.5rem;
+}
+
+.BannerInfo {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.BannerInfo > .MainButton > .MainButtonText {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.BannerInfo > .MainButton > .MainButtonText > a {
+  text-decoration: underline;
+}
+
+.BigTitle {
+  max-width: 29.5rem;
+  color: black;
+  font: normal 700 3rem/3rem "MetropolisBold";
+}
+
+.Text {
+  max-width: 29.6rem;
+  color: var(--Grey);
+  font: normal 500 1rem/1.5rem "MetropolisMedium";
+}
+
+.BannerInfo > .Text {
+  color: black;
+  opacity: 0.5;
+  max-width: 29.5rem;
+}
+
+.BannerButtons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.Benefit {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.BenefitHeader {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 1.3rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.BenefitHeader > .MainButton.LightButton:hover,
+.BenefitHeader > .MainButton.LightButton:active {
+  background-color: var(--LightPurple);
+  opacity: 1;
+}
+
+.Title {
+  color: var(--Violet);
+  text-align: center;
+  font: normal 700 2rem "MetropolisBold";
+}
+
+.BenefitHeader > .Text {
+  max-width: 42rem;
+  text-align: center;
+}
+
+.BenefitFooter {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.Column {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.BenefitFooter > .Column {
+  align-items: center;
+}
+
+.Inner {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Benefit .Column .Inner {
+  align-items: center;
+  justify-content: center;
+}
+
+.SmallTitle {
+  color: var(--Violet);
+  font: normal 700 1rem "MetropolisBold";
+}
+
+.Benefit .Text {
+  max-width: 19.5rem;
+  text-align: center;
+}
+
+.Info {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Info::before {
+  content: "";
+  background-image: url("../images/Home/Info/CircleIcons.webp");
+  background-size: cover;
+  min-width: 25.75rem;
+  height: 27.7rem;
+}
+
+.Info .MainButton.LightButton:hover,
+.Info .MainButton.LightButton:active {
+  background-color: var(--LightPurple);
+  opacity: 1;
+}
+
+.Teams {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Teams::after {
+  content: "";
+  background-image: url("../images/Home/Teams/Teams.webp");
+  background-size: cover;
+  min-width: 42.75rem;
+  height: 25.8rem;
+}
+
+.Responses {
+  background: linear-gradient(180deg, white 0%, rgb(226, 241, 255) 100%);
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Response {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Response > .Column {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Response > .Column > q {
+  max-width: 60.25rem;
+  color: var(--Violet);
+  text-align: center;
+  font: normal 700 1.5rem/2rem "MetropolisBold";
+}
+
+.Response > .Column > span {
+  max-width: 8.9rem;
+  color: black;
+  text-align: center;
+  font: normal 700 1rem/1.5rem "MetropolisBold";
+}
+
+.Response > hr {
+  width: 100%;
+  border: 0.1rem solid var(--Pink);
+}
+
+.Partners {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Feedback {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.FeedbackContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.FeedbackContent > .Column > .Inner {
+  align-items: center;
+}
+
+.FeedbackContent > .Column > .Inner > .Title {
+  max-width: 26.9rem;
+}
+
+.FeedbackContent > .Column > .Inner > .Text {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.FeedbackContent > .Column > .Inner > .Text > hr {
+  background-color: var(--Grey);
+  width: 100%;
+  height: 0.1rem;
+}
+
+.Customers {
+  max-width: 18.9rem;
+  height: 9.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.FeedbackForm {
+  background-color: white;
+  min-width: 26.75rem;
+  height: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.375rem;
+  box-shadow: 0rem 1.25rem 1.25rem 1.25rem rgb(249, 240, 255);
+  padding: 1rem;
+}
+
+.FeedbackForm > .Title {
+  font-size: 1.5rem;
+}
+
+.FeedbackForm > .MainButton {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.FeedbackForm > input:is([type="email"], [type="password"]) {
+  background-color: white;
+  width: 100%;
+  height: 3rem;
+  color: var(--Grey);
+  border: 0.1rem solid var(--Grey);
+  font: normal 500 1rem "MetropolisMedium";
+  padding: 0rem 1rem;
+}
+
+.FeedbackForm > .Text {
+  color: black;
+  text-transform: uppercase;
+}
+
+.GoogleButton {
+  width: auto;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  border: 0.1rem solid rgb(66, 133, 244);
+}
+
+.GoogleButtonText {
+  color: white;
+  white-space: nowrap;
+  font: normal 500 0.875rem system-ui;
+}
+
+.GoogleButtonLeft {
+  width: auto;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+}
+
+.GoogleButtonRight {
+  background-color: rgb(66, 133, 244);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+}
+
+.GoogleButton:hover {
+  opacity: 0.7;
+}
+
+.GoogleButton:active {
+  opacity: 0.5;
+}
+
+.FeedbackForm hr {
+  width: 100%;
+  height: 0.1rem;
+  border: 0.1rem solid var(--Grey);
+}
+
+.Enter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.Enter > a {
+  color: var(--Purple);
+  font: normal 500 1rem "MetropolisMedium";
+}
